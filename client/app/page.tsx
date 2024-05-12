@@ -1,6 +1,4 @@
 import HomeBtn from "@/components/HomeBtn"
-import SigninBtn from "@/components/SigninBtn"
-import SignoutBtn from "@/components/SignoutBtn"
 import { getServerSession } from "next-auth"
 
 

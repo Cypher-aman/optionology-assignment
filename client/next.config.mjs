@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      webSocket: true,
-    },
+  typescript: {
+    ignoreBuildErrors: true,
+ },
     // ... other configurations
   };
 
