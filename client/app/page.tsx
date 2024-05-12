@@ -6,7 +6,7 @@ export default async function Home() {
   const session = await getServerSession()
   let symbols = []
   try {
-    const res = await fetch('http://localhost:8000/api/getActiveInstruments')
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/getActiveInstruments`)
    symbols = await res.json()
   } catch (error) {
     console.error("Error fetching active instruments:", error);

@@ -22,7 +22,7 @@ export default function useWS () {
     const [data, setData] = useState<BitmexCandle[]>([])    
   
     useEffect(() => {
-        const ws = new WebSocket('ws://localhost:8000/');
+        const ws = new WebSocket(`ws://${process.env.NEXT_PUBLIC_SOCKET_URL}`);
 
         ws.onmessage = (event) => {
         //   console.log(event.data);

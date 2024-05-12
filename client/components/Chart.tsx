@@ -26,7 +26,7 @@ export default function Chart() {
   useEffect(() => {
     async function fetchSuggestions() {
       const res = await fetch(
-        'http://localhost:8000/api/getSuggestions/' + debouncedQuery
+        `${process.env.NEXT_PUBLIC_API_URL}/getSuggestions/${debouncedQuery}`
       );
       const data = await res.json();
       console.log({ data });
@@ -74,7 +74,7 @@ export default function Chart() {
 
           </div>
         </div>
-        <button type="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-end" onClick={() => signOut()}>Sign out</button>
+        <button type="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-end" onClick={() => signOut({ callbackUrl: '/'})}>Sign out</button>
       </div>
       <div className="flex md:flex-row flex-col gap-10 w-[90%] h-[70%]">
         <div className="text-black flex-1">
